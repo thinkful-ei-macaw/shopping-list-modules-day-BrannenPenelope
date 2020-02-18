@@ -42,7 +42,17 @@ const render = function () {
 };
 
 const addItemToShoppingList = function (itemName) {
-  store.items.push({ id: cuid(), name: itemName, checked: false });
+  //store.items.push({ id: cuid(), name: itemName, checked: false });
+  try { 
+    item.validateName();
+    item.create();
+    store.items.push(itemName);
+    render();
+    
+  } catch (error) {
+    console.log(`"can not add item: ${error.message}"`);
+    
+  }
 };
 
 const handleNewItemSubmit = function () {

@@ -1,6 +1,6 @@
 function validateName(name) {
     if (name === '') {
-        throw new TypeError("Name must not be blank")
+        throw new TypeError("Name must not be blank");
     }
 }
 
